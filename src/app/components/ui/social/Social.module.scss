@@ -1,0 +1,23 @@
+@import '../../../variables';
+
+.wrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   gap: 1.25rem;
+}
+
+.logo {
+   fill: red;
+}
+
+.img {
+   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);
+
+   @media (any-hover:hover) {
+      &:hover {
+         transition: $mainTransition;
+         filter: brightness(0) saturate(100%) invert(26%) sepia(50%) saturate(6917%) hue-rotate(350deg) brightness(116%) contrast(106%);
+      }
+   }
+}

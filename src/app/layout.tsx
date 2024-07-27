@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.scss";
 
-const inter = Inter({ subsets: ["cyrillic"] });
+import localFont from 'next/font/local'
+
+const myFont = localFont({
+  src: '../../public/fonts/futura_pt_book.woff2',
+  display: 'swap',
+  weight: '400'
+})
+
 
 export const metadata: Metadata = {
   title: "Сериал | Ведьмак",
   description: "Сериал 'Ведьмак' - смотреть онлайн",
 };
+
 
 export default function RootLayout({
   children,
@@ -16,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
+      <body className={myFont.className}>{children}</body>
     </html>
   );
 }

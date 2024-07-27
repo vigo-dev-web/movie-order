@@ -1,0 +1,31 @@
+@import '../../variables';
+
+.poster {
+   background-image: url('../../../../public/poster-movie.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+.container {
+   @include container;
+   padding-top: toRem(104);
+   padding-bottom: toRem(100);
+   font-weight: 600;
+}
+
+.content {
+   max-width: toRem(370);
+}
+
+.title {
+   font-size: toRem(40);
+   line-height: 1;
+   padding-bottom: toRem(16);
+}
+
+.text {
+   font-weight: 400;
+   line-height: toRem(20);
+   padding-bottom: toRem(32);
+}

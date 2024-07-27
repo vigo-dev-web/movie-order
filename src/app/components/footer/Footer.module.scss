@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.footer {
+   background-color: $mainGrey;
+}
+.container {
+   @include container;
+   padding-top: toRem(40);
+   padding-bottom: toRem(40);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.policy {
+   color: rgb(255, 255, 255, 0.7);
+   display: inline-block;
+   max-width: toRem(130);
+   font-size: toRem(14);
+   line-height: toRem(20);
+   text-decoration: underline;
+   text-underline-offset: toRem(4);
+   transition: $mainTransition;
+   @media (any-hover:hover) {
+      &:hover {
+         color: #fff;
+      }
+   }
+
+}
