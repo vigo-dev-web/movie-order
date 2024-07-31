@@ -2,9 +2,11 @@
 
 .movieFrame {
    margin-bottom: toRem(72);
+
    @media (max-width: $tablet) {
       margin-bottom: toRem(64);
    }
+
    @media (max-width: $mobile) {
       margin-bottom: toRem(48);
    }
@@ -24,6 +26,13 @@
    }
 }
 
+.gridConatainer {
+   margin-bottom: toRem(32);
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(24);
+   }
+}
+
 .gridTemplate {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -33,17 +42,36 @@
       "main main first second"
       "main main third fourth"
    ;
-   padding-bottom: toRem(32);
+   margin-bottom: toRem(24);
 
    @media (max-width: $tablet) {
       gap: toRem(16);
-      padding-bottom: toRem(24);
+      margin-bottom: toRem(16);
    }
 
    @media (max-width: $mobile) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas: none;
+      gap: unset;
+      row-gap: toRem(16);
+   }
+}
+
+.subGridTemplate {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: toRem(24);
+   // padding-bottom: toRem(32);
+
+   @media (max-width: $tablet) {
+      gap: toRem(16);
+      // padding-bottom: toRem(24);
+   }
+
+   @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       gap: unset;
       row-gap: toRem(16);
    }
@@ -70,6 +98,8 @@
 
    @media (max-width: $mobile) {
       grid-area: unset;
+      display: none;
+
    }
 
 }
@@ -79,6 +109,7 @@
 
    @media (max-width: $mobile) {
       grid-area: unset;
+      display: none;
    }
 }
 

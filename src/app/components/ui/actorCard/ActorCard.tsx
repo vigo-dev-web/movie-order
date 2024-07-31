@@ -8,14 +8,7 @@ const ActorCard = () => {
 			<Image
 				className={styles.mainFrame}
 				src='/actor-1.jpg'
-				sizes='282px'
-				width={282}
-				height={400}
-				style={{
-					// width: '100%',
-					// height: '100%',
-					objectFit: 'cover'
-				}}
+				fill={true}
 				alt='Основной кадр'
 			/>
 			<div className={styles.actorPersonalHover}>

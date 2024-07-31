@@ -19,48 +19,66 @@
    @media (max-width: $tablet) {}
 }
 
-.sliderContainer {
-   overflow: unset;
-   height: 500px;
-   width: toRem(1440);
+.sliderWrapper {
+   max-width: toRem(1220);
+   :global(.swiper-pagination) {
+      top: -9% !important;
+      max-width: toRem(1200) !important;
+      @media (max-width: $tablet) {
+         max-width: toRem(600);
+      }
 }
 
-.buttonNext {
-   position: absolute;
-   top: -5%;
-   right: -5%;
-   width: toRem(32);
-   height: toRem(32);
-   margin-top: toRem(5);
-   z-index: 10;
-   cursor: pointer;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: $mainRed;
-   font-size: toRem(32);
-}
+   --swiper-theme-color: #ec3f3f;
+   --swiper-pagination-progressbar-size: 2px;
+   --swiper-pagination-progressbar-bg-color: #343338;
+   --swiper-navigation-top-offset: -17%;
 
-.buttonNext::after{
-   content: 'next';
-}
+   :global(.swiper) {
+      overflow: visible;
+   }
 
-.buttonPrev {
-   position: absolute;
-   top: -5%;
-   left: 0;
-   width: toRem(32);
-   height: toRem(32);
-   margin-top: toRem(5);
-   z-index: 10;
-   cursor: pointer;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: $mainRed;
-   font-size: toRem(32);
-}
+   :global(.swiper-pagination-horizontal) {
+      top: 50%;
+   }
 
-.buttonPrev::after {
-   content: 'prev';
+   :global(.swiper-button-prev) {
+      left: 92%;
+      width: toRem(32);
+      height: toRem(32);
+      color: $mainRed;
+
+      &::after {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-60%, -50%);
+         font-size: toRem(32);
+      }
+
+      @media (max-width: $tablet) {
+         width: 32px;
+         height: 32px;
+         left: 91%;
+      }
+   }
+
+   :global(.swiper-button-next) {
+      right: 0;
+      width: toRem(32);
+      height: toRem(32);
+      color: $mainRed;
+
+      &::after {
+         position: absolute;
+         top: 50%;
+         transform: translate(0, -50%);
+         font-size: toRem(32);
+      }
+
+      @media (max-width: $tablet) {
+         width: 32px;
+         height: 32px;
+      }
+   }
 }

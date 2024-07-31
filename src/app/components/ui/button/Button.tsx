@@ -4,10 +4,11 @@ import styles from './button.module.scss'
 interface IButton {
 	children: ReactNode | string
 	opacity?: boolean
+	onClick?: () => void
 }
 
-const Button = ({ children, opacity }: IButton) => {
-	return <button className={opacity ? styles.btnReverse : styles.btn}>{children}</button>
+const Button = ({ children, opacity, onClick}: IButton) => {
+	return <button className={opacity ? styles.btnReverse : styles.btn} onClick={onClick}>{children}</button>
 }
 
 export default Button
