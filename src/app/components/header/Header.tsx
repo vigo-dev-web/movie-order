@@ -7,7 +7,7 @@ const Header = () => {
 		<header className={styles.header}>
          <div className={styles.container}>
 				<Logo />
-				<ButtonLink opacity={true} link={'/movie-oreder'}>{'Подключить подписку'}</ButtonLink>
+				<ButtonLink opacity={true} link={'/movie-order'}>{'Подключить подписку'}</ButtonLink>
 			</div>
 		</header>
 	)

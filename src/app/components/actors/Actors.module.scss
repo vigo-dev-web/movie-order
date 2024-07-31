@@ -1,0 +1,66 @@
+@import '../../variables';
+
+.actors {
+   margin-bottom: toRem(72);
+
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(64);
+   }
+}
+
+.container {
+   @include container;
+}
+
+.title {
+   @include title;
+   margin-bottom: toRem(56);
+
+   @media (max-width: $tablet) {}
+}
+
+.sliderContainer {
+   overflow: unset;
+   height: 500px;
+   width: toRem(1440);
+}
+
+.buttonNext {
+   position: absolute;
+   top: -5%;
+   right: -5%;
+   width: toRem(32);
+   height: toRem(32);
+   margin-top: toRem(5);
+   z-index: 10;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: $mainRed;
+   font-size: toRem(32);
+}
+
+.buttonNext::after{
+   content: 'next';
+}
+
+.buttonPrev {
+   position: absolute;
+   top: -5%;
+   left: 0;
+   width: toRem(32);
+   height: toRem(32);
+   margin-top: toRem(5);
+   z-index: 10;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: $mainRed;
+   font-size: toRem(32);
+}
+
+.buttonPrev::after {
+   content: 'prev';
+}

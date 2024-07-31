@@ -4,7 +4,15 @@
    display: flex;
    justify-content: space-between;
    align-items: baseline;
-   gap: 1.25rem;
+   gap: toRem(20);
+   @media (max-width: $tablet) {
+      gap: toRem(16);
+   }
+
+   @media (max-width: $mobile) {
+      gap: toRem(12);
+   }
+
 }
 
 .logo {

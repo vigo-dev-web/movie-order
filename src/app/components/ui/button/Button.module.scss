@@ -1,15 +1,19 @@
 @import '../../../variables';
 
 .btn {
+
    display: inline-block;
    font-size: 1rem;
    line-height: 1.5;
+   font-family: inherit;
    font-weight: 600;
    background-color: $mainRed;
+   color: #fff;
    padding: 1rem 2rem 1rem 2rem;
    cursor: pointer;
    transition: $mainTransition;
    text-wrap: nowrap;
+   width: 100%;
 
    @media (any-hover:hover) {
       &:hover {
@@ -21,15 +25,19 @@
 
 .btnReverse {
    display: inline-block;
+   width: 100%;
+   font-family: inherit;
    font-size: 1rem;
    line-height: 1.5;
    font-weight: 600;
    background-color: $mainRedOpacity;
+   color: #fff;
    border: 1px solid $mainRedBorder;
    padding: 1rem 2rem 1rem 2rem;
    cursor: pointer;
    transition: $mainTransition;
    text-wrap: nowrap;
+   width: 100%;
 
    @media (any-hover:hover) {
       &:hover {

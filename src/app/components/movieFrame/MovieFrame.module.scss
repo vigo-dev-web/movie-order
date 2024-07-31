@@ -1,0 +1,92 @@
+@import '../../variables';
+
+.movieFrame {
+   margin-bottom: toRem(72);
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(64);
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: toRem(48);
+   }
+}
+
+.container {
+   @include container;
+
+}
+
+.title {
+   @include title;
+   margin-bottom: toRem(40);
+
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(24);
+   }
+}
+
+.gridTemplate {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(1, 1fr);
+   gap: toRem(24);
+   grid-template-areas:
+      "main main first second"
+      "main main third fourth"
+   ;
+   padding-bottom: toRem(32);
+
+   @media (max-width: $tablet) {
+      gap: toRem(16);
+      padding-bottom: toRem(24);
+   }
+
+   @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: none;
+      gap: unset;
+      row-gap: toRem(16);
+   }
+}
+
+.mainItem {
+   grid-area: main;
+
+   @media (max-width: $mobile) {
+      grid-area: unset;
+   }
+}
+
+.firstItem {
+   grid-area: first;
+
+   @media (max-width: $mobile) {
+      grid-area: unset;
+   }
+}
+
+.secondItem {
+   grid-area: second;
+
+   @media (max-width: $mobile) {
+      grid-area: unset;
+   }
+
+}
+
+.thirdItem {
+   grid-area: third;
+
+   @media (max-width: $mobile) {
+      grid-area: unset;
+   }
+}
+
+.fourthItem {
+   grid-area: fourth;
+
+   @media (max-width: $mobile) {
+      grid-area: unset;
+   }
+
+}

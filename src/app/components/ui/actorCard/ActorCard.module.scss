@@ -1,0 +1,65 @@
+@import '../../../variables';
+
+.actorCard {
+   position: relative;
+   cursor: pointer;
+   line-height: 0;
+   max-width: toRem(282);
+}
+
+.actorCard:after {
+   content: "";
+   opacity: 0;
+   transition: $mainTransition;
+}
+
+.actorCard:hover:after {
+   display: block;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 0%);
+   opacity: 0.3;
+   z-index: 2;
+}
+
+.actorPersonal {
+   position: absolute;
+   bottom: toRem(32);
+   left: toRem(24);
+   font-size: toRem(24);
+   line-height: toRem(32);
+   font-weight: 400;
+   transition: $mainTransition;
+   z-index: 10;
+}
+
+.actorPersonalHover {
+   position: absolute;
+   top: toRem(24);
+   left: toRem(24);
+   font-size: toRem(24);
+   line-height: toRem(32);
+   font-weight: 400;
+   transition: $mainTransition;
+   z-index: 10;
+}
+
+.actorRole {
+   font-weight: 600;
+   margin-bottom: toRem(4);
+}
+
+.actorDesc {
+   position: absolute;
+   max-width: toRem(224);
+   bottom: toRem(32);
+   left: toRem(24);
+   transition: $mainTransition;
+   font-size: toRem(16);
+   line-height: toRem(20);
+   font-weight: 400;
+   z-index: 10;
+}

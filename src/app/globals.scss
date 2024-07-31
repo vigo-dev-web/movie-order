@@ -34,6 +34,14 @@ li {
   list-style-type: none;
 }
 
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(100%);
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

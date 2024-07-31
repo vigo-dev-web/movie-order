@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Logo from '../ui/logo/Logo'
 import Social from '../ui/social/Social'
 import styles from './Footer.module.scss'
+import { useContext } from 'react'
 
 const Footer = () => {
 	return (

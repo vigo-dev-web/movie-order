@@ -1,0 +1,11 @@
+@import '../../../variables';
+
+.container {
+   width: toRem(130);
+   height: toRem(44);
+   position: relative;
+   @media (max-width: $mobile) {
+      width: toRem(106);
+      height: toRem(36)
+   }
+}

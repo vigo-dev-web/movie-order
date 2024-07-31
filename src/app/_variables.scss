@@ -1,3 +1,5 @@
+//----- vars -----//
+
 $mainBlack: #181818;
 $mainRed: #ec3f3f;
 $mainGrey: #343338;
@@ -7,14 +9,16 @@ $mainRedHover: #ff1e1e;
 $mainTransition: all 0.4s ease-in 0s;
 $mainShadow: rgb(255, 30, 30, 0.5) 0px 2px 24px 0;
 
+//----- func & mixin -----//
+
 @function toRem($value) {
    $remValue: calc($value / 16) + rem;
    @return $remValue;
 }
 
 $pc: toRem(1440);
-$tablet: toRem(767.98);
-$mobile: toRem(359.98);
+$tablet: toRem(768);
+$mobile: toRem(380);
 
 @mixin container {
    margin: 0 auto;
@@ -27,6 +31,23 @@ $mobile: toRem(359.98);
 
    @media (max-width: $mobile) {
       max-width: 348px;
+   }
+
+
+}
+@mixin title {
+   font-size: toRem(40);
+   font-weight: 600;
+   line-height: toRem(48);
+
+   @media (max-width: $tablet) {
+      font-size: toRem(32);
+      line-height: toRem(40);
+   }
+
+   @media (max-width: $mobile) {
+      font-size: toRem(28);
+      line-height: toRem(36);
    }
 
 }

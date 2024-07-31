@@ -1,0 +1,44 @@
+@import '../../variables';
+
+.maps {
+   // margin-bottom: toRem(72);
+
+   @media (max-width: $tablet) {
+      // margin-bottom: toRem(64);
+   }
+}
+
+.container {
+   @include container;
+   margin-bottom: toRem(96);
+   @media (max-width: $tablet) {
+      max-width: toRem(1440);
+      margin-bottom: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+   }
+}
+
+.title {
+   @include title;
+   margin-bottom: toRem(40);
+
+   @media (max-width: $tablet) {
+      padding-left: toRem(10);
+      margin-bottom: toRem(24);
+   }
+}
+
+.yMapContainer {
+   max-width: toRem(1200);
+   height: toRem(540);
+   @media (max-width: $tablet) {
+      max-width: toRem(1440);
+      height: toRem(400);
+   }
+   @media (max-width: $mobile) {
+      max-width: 100%;
+      height: toRem(400);
+   }
+}

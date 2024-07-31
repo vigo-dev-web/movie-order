@@ -10,6 +10,13 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   column-gap: toRem(4) ;
+   @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      padding-top: toRem(28);
+      padding-bottom: toRem(24);
+      row-gap: toRem(26);
+   }
 }
 
 .policy {
@@ -21,6 +28,11 @@
    text-decoration: underline;
    text-underline-offset: toRem(4);
    transition: $mainTransition;
+   @media (max-width: $mobile) {
+      order: 3;
+      text-wrap: nowrap;
+   }
+
    @media (any-hover:hover) {
       &:hover {
          color: #fff;
