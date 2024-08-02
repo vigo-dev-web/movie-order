@@ -18,7 +18,7 @@ $mainShadow: rgb(255, 30, 30, 0.5) 0px 2px 24px 0;
 
 $pc: toRem(1440);
 $tablet: toRem(768);
-$mobile: toRem(380);
+$mobile: toRem(420);
 
 @mixin container {
    margin: 0 auto;
@@ -30,7 +30,7 @@ $mobile: toRem(380);
    }
 
    @media (max-width: $mobile) {
-      max-width: 348px;
+      max-width: 400px;
    }
 
 

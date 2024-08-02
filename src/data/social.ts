@@ -1,9 +1,4 @@
-type Social = {
-	id: string | number
-	link: string
-	img: string
-	alt: string
-}
+import { Social } from '@/types/Entyties';
 
 export const social: Social[] = [
 	{ id: 0, link: 'https://www.instagram.com/', img: '/inst.svg', alt: 'instagram' },

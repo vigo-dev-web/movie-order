@@ -21,13 +21,25 @@
 
 .sliderWrapper {
    max-width: toRem(1220);
+
+   @media (max-width: $mobile) {
+      max-width: 100% !important;
+   }
+
    :global(.swiper-pagination) {
       top: -9% !important;
       max-width: toRem(1200) !important;
+
       @media (max-width: $tablet) {
-         max-width: toRem(600);
+         max-width: toRem(600) !important;
       }
-}
+   }
+   :global(.swiper-slide) {
+
+      @media (max-width: $mobile) {
+         max-width: toRem(290) !important;
+      }
+   }
 
    --swiper-theme-color: #ec3f3f;
    --swiper-pagination-progressbar-size: 2px;
@@ -59,7 +71,11 @@
       @media (max-width: $tablet) {
          width: 32px;
          height: 32px;
-         left: 91%;
+         left: 87%;
+      }
+
+      @media (max-width: $mobile) {
+         left: 83%;
       }
    }
 

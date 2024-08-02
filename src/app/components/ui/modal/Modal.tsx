@@ -1,16 +1,15 @@
+import { useModalContext } from '@/app/modalContext'
 import styles from './modal.module.scss'
 
-interface IModalProps {
-	onClose: () => void
-	open: boolean
-}
-const Modal = ({ open, onClose }: IModalProps) => {
-	if (!open) return null
+const Modal = () => {
+	const { isOpen, setIsOpen } = useModalContext()
+
+	if (!isOpen) return null
 
 	return (
 		<div className={styles.layout}>
 			<div className={styles.body} onClick={(e) => e.stopPropagation()}>
-				<p className={styles.closeBtn} onClick={onClose}>X</p>
+				<p className={styles.closeBtn} onClick={(prev) => setIsOpen(!prev)}>X</p>
 				<div className={styles.content}>
 					<h2 className={styles.title}>Обработка данных</h2>
 					<div>

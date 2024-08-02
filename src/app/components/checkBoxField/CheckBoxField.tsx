@@ -2,7 +2,7 @@ import React, { ChangeEvent, ReactNode } from 'react'
 
 interface ICheckBoxField {
 	name: string
-	value: boolean
+	value: boolean | undefined
 	onChange: (target: ChangeEvent<HTMLInputElement>) => void
 	children: ReactNode
 	error?: string
@@ -17,7 +17,7 @@ const CheckBoxField = ({ name, value, onChange, children, error }: ICheckBoxFiel
 		return 'form-check-input' + (error ? ' is-invalid' : '')
 	}
 	return (
-		<div className='form-check mb-4'>
+		<div>
 			<input
 				className={getInputClasses()}
 				type='checkbox'
@@ -27,12 +27,11 @@ const CheckBoxField = ({ name, value, onChange, children, error }: ICheckBoxFiel
 				checked={value}
 			/>
 			<label
-				className='form-check-label '
 				htmlFor={name}
 			>
 				{children}
 			</label>
-			{error && <div className='invalid-feedback'>{error}</div>}
+			{error && <div>{error}</div>}
 		</div>
 	)
 }

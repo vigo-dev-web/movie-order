@@ -1,0 +1,16 @@
+@import '../../../variables';
+
+.container {
+   font-size: toRem(40);
+   line-height: toRem(48);
+}
+
+.item {
+   margin-bottom: toRem(32);
+}
+
+.title {
+   font-size: toRem(16);
+   line-height: toRem(20);
+   margin-bottom: toRem(8);
+}

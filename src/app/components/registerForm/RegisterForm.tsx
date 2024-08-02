@@ -1,23 +1,18 @@
 'use client'
 
-import React, { useState, useEffect, ChangeEvent } from 'react'
+import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { validator } from '@/utils/validator'
+import { ErrorData, InputData } from '@/types/Entyties'
+import { cities } from '@/data/cities'
+import styles from './RegisterForm.module.scss'
 import SelectField from '../selectField/SelectField'
 import TextField from '../textField/TextField'
+import FileField from '../fileField/FileField'
 import CheckBoxField from '../checkBoxField/CheckBoxField'
+import { validatorConfig } from '@/data/validatorConfig'
+import OrderSucess from '../ui/orderSucess/OrderSucess'
 
 const RegisterForm = () => {
-
-   type InputData = {
-      city: string,
-      name: string,
-		email: string,
-		phone: string,
-		message: string,
-		privacy: boolean
-
-   }
-
 	const [data, setData] = useState<InputData>({
 		city: '',
 		name: '',
@@ -25,137 +20,124 @@ const RegisterForm = () => {
 		phone: '',
 		message: '',
 		privacy: true
-   })
+	})
 
-	const [errors, setErrors] = useState({})
-	const [cities, setCities] = useState<any>([])
-   const handleChange = ( target : ChangeEvent<HTMLInputElement>) => {
-		setData((prevState) => ({ ...prevState, [target.name]: target.value }))
-	}
-   console.log(data)
-	const validatorConfig = {
-		city: {
-			isRequired: {
-				message: 'Город не выбран'
-			}
-		},
-		name: {
-			isRequired: {
-				message: 'Поле не заполнено'
-			}
-		},
-		email: {
-			isRequired: {
-				message: 'Поле не заполнено'
-			}
-		},
-		phone: {
-			isRequired: {
-				message: 'Поле не заполнено'
-			}
-		},
-		message: {
-			isRequired: {
-				message: 'Поле не заполнено'
-			}
-		},
-		privacy: {
-			isRequired: {
-				message: 'Поле не заполнено'
-			}
-		}
-	}
+	const [errors, setErrors] = useState<ErrorData>({} as ErrorData)
+
+	const [isSuccess, setIsSucess] = useState(false)
+
 	useEffect(() => {
 		validate()
 	}, [data])
 
+	const handleChange = (target: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		setData((prevState) => ({ ...prevState, [target.name]: target.value }))
+	}
+
 	const validate = () => {
 		const errors = validator(data, validatorConfig)
-		setErrors(errors)
+		setErrors(errors as ErrorData)
 		return Object.keys(errors).length === 0
 	}
 	const isValid = Object.keys(errors).length === 0
 
-	const getProfessionById = (id: string) => {
+	const getCityById = (id: string) => {
 		for (const city of cities) {
-			if (city.value === id) {
-				return { _id: city.value, name: city.label }
+			if (city.name === id) {
+				return { id: city.name, name: city.name }
 			}
 		}
 	}
 
-	const handleSubmit = (e: { preventDefault: () => void }) => {
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		const isValid = validate()
 		if (!isValid) return
-		const { city } = data
-		console.log({ ...data, city: getProfessionById(city) })
+		setIsSucess(true)
+		// const { city } = data
+		// console.log({ ...data, city: getCityById(city) })
 	}
 
+	console.log(isSuccess)
+
 	return (
-      <form onSubmit={handleSubmit}>
-			<SelectField
-            label='Выберете город'
-            name='city'
-            options={cities}
-            defaultOption='Список городов'
-            onChange={handleChange}
-            value={data.city}
-            // error={errors.city}
-			/>
-			<TextField
-				label='Имя'
-				type='text'
-				name='name'
-				value={data.name}
-				// error={errors.name}
-				onChange={handleChange}
-			/>
-			<TextField
-				label='Email'
-				type='text'
-				name='email'
-				value={data.email}
-				// error={errors.email}
-				onChange={handleChange}
-			/>
-			<TextField
-				label='Телефон'
-				type='text'
-				name='phone'
-				value={data.phone}
-				// error={errors.phone}
-				onChange={handleChange}
-			/>
-			<TextField
-				label='Оставьте пометку к заказу'
-				type='text'
-				name='message'
-				value={data.message}
-				// error={errors.message}
-				onChange={handleChange}
-			/>
-			<input
-				type='file'
-				name='file'
-				id='file'
-         />
-			<CheckBoxField
-				value={data.privacy}
-				onChange={handleChange}
-				name='privacy'
-				// error={errors.privacy}
-			>
-				Подтвердить <a>лицензионное соглашение</a>
-			</CheckBoxField>
-			<button
-				type='submit'
-				disabled={!isValid}
-				className='btn btn-primary w-100 mx-auto'
-			>
-				Оставить заявку
-			</button>
-		</form>
+		<div className={styles.container}>
+			{isSuccess ? (
+				<OrderSucess />
+			) : (
+				<>
+					<h3 className={styles.title}>Оставьте заявку</h3>
+					<form onSubmit={handleSubmit}>
+						<div className={styles.field}>
+							<SelectField
+								name='city'
+								options={cities}
+								defaultOption='Выберете город: '
+								onChange={handleChange}
+								value={data.city}
+								error={errors.city}
+							/>
+						</div>
+						<div className={styles.field}>
+							<TextField
+								label='Имя'
+								type='text'
+								name='name'
+								value={data.name}
+								error={errors.name}
+								onChange={handleChange}
+							/>
+						</div>
+						<div className={styles.connectFields}>
+							<TextField
+								label='Email'
+								type='text'
+								name='email'
+								value={data.email}
+								error={errors.email}
+								onChange={handleChange}
+							/>
+							<TextField
+								label='+7(___) __-__-___'
+								type='text'
+								name='phone'
+								value={data.phone}
+								error={errors.phone}
+								onChange={handleChange}
+							/>
+						</div>
+						<div className={styles.field}>
+							<TextField
+								label='Оставьте пометку к заказу'
+								type='text'
+								name='message'
+								value={data.message}
+								error={errors.message}
+								onChange={handleChange}
+							/>
+						</div>
+						<div className={styles.field}>
+							<FileField />
+						</div>
+
+						<CheckBoxField
+							value={data.privacy}
+							onChange={handleChange}
+							name='privacy'
+							error={errors.privacy}
+						>
+							Даю согласие на обработку своих персональных данных
+						</CheckBoxField>
+						<button
+							type='submit'
+							// disabled={!isValid}
+						>
+							Оставить заявку
+						</button>
+					</form>
+				</>
+			)}
+		</div>
 	)
 }
 

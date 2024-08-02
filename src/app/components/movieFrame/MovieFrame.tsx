@@ -10,8 +10,7 @@ const MovieFrame = () => {
 	const handleShowFrame = () => {
 		setIsShowFrame((prev) => !prev)
 	}
-	console.log(isShowFrame)
-
+	
 	return (
 		<section className={styles.movieFrame}>
 			<div className={styles.container}>

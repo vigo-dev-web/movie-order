@@ -1,39 +1,35 @@
 import React, { ChangeEvent } from 'react'
+import { City } from '@/types/Entyties'
+import styles from "./SelectField.module.scss"
 
-interface ISelectedField {
-	label: string
+interface ISelectField {
 	name: string
 	value: string
-	onChange: (target: ChangeEvent<HTMLInputElement>)  => void
-	error?: string
-	options: string[]
-	defaultOption: string
+	onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+	error: string
+	options: City[]
+   defaultOption: string
 }
 
-const SelectField = ({ label, name, value, onChange, error, options, defaultOption }: ISelectedField) => {
-	const optionsArray = !Array.isArray(options) && typeof options === 'object' ? Object.values(options) : options
+const SelectField = ({ name, value, onChange, error, options, defaultOption }: ISelectField) => {
+
 	const getInputClasses = () => {
 		return 'form-select' + (error ? ' is-invalid' : '')
 	}
 
-	const handleChange = ({ target }:ChangeEvent<HTMLSelectElement> ) => {
+   const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
 		onChange({ name: target.name, value: target.value })
 	}
 
 	return (
-		<div className='mb-4'>
-			<label
-				htmlFor={name}
-				className='form-label'
-			>
-				{label}
-			</label>
+		<div>
 			<select
+				className={styles.select}
 				id={name}
 				name={name}
 				value={value}
 				onChange={handleChange}
-				className={getInputClasses()}
+				// className={getInputClasses()}
 			>
 				<option
 					disabled
@@ -41,17 +37,17 @@ const SelectField = ({ label, name, value, onChange, error, options, defaultOpti
 				>
 					{defaultOption}
 				</option>
-				{optionsArray.length > 0 &&
-					optionsArray.map((option:any) => (
+				{options.length > 0 &&
+					options.map((option) => (
 						<option
-							value={option.value}
-							key={option.value}
+							value={option.name}
+							key={option.name}
 						>
-							{option.label}
+							{option.name}
 						</option>
 					))}
 			</select>
-			{error && <div className='invalid-feedback'>{error}</div>}
+			{error && <div>{error}</div>}
 		</div>
 	)
 }

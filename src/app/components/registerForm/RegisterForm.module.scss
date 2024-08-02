@@ -1,0 +1,25 @@
+@import '../../variables';
+
+.container {
+   max-width: toRem(486);
+
+   @media (max-width: $tablet) {
+      max-width: toRem(380);
+   }
+}
+
+.title {
+   font-size: toRem(40);
+   margin-bottom: toRem(48);
+}
+
+.field {
+   margin-bottom: toRem(32);
+   width: 100%;
+}
+
+.connectFields {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: toRem(32);
+}

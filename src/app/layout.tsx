@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.scss'
 import localFont from 'next/font/local'
-import { ModalProvider } from './components/modal-provider'
+import { ModalWrapper } from './modalContext'
 
 const myFont = localFont({
 	src: '../../public/fonts/futura_pt_book.woff2',
@@ -20,10 +20,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='ru'>
-			<body className={myFont.className}>
-				{children}
-			</body>
-		</html>
+		<ModalWrapper>
+			<html lang='ru'>
+				<body className={myFont.className}>{children}</body>
+			</html>
+		</ModalWrapper>
 	)
 }

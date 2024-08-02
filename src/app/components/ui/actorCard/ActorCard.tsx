@@ -2,21 +2,21 @@ import Image from 'next/image'
 import styles from './ActorCard.module.scss'
 import { Actor } from "@/types/Entyties"
 
-const ActorCard = () => {
+const ActorCard = ({name, desc, role, img}:Actor) => {
 	return (
 		<div className={styles.actorCard}>
 			<Image
 				className={styles.mainFrame}
-				src='/actor-1.jpg'
+				src={img}
 				fill={true}
-				alt='Основной кадр'
+				alt={name}
 			/>
 			<div className={styles.actorPersonalHover}>
-				<p className={styles.actorRole}>Ция</p>
-				<p>Фрея Аннон</p>
+				<p className={styles.actorRole}>{role}</p>
+				<p>{name}</p>
 			</div>
 			<p className={styles.actorDesc}>
-				Один из центральных персонажей сериала, лучший друг и неизменный спутник Геральта, трубадур и бабник
+				{desc}
 			</p>
 		</div>
 	)
