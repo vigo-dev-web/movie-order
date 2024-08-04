@@ -4,22 +4,54 @@
    max-width: toRem(486);
 
    @media (max-width: $tablet) {
-      max-width: toRem(380);
+      max-width: toRem(320);
+   }
+
+   @media (max-width: $mobile) {
+      max-width: toRem(328);
    }
 }
 
 .title {
-   font-size: toRem(40);
+   font-size: toRem(56);
+   line-height: 1;
    margin-bottom: toRem(48);
+   font-weight: 600;
+
+   @media (max-width: $tablet) {
+      font-size: toRem(40);
+      margin-bottom: toRem(36);
+
+   }
+
+   @media (max-width: $mobile) {
+      font-size: toRem(32);
+      line-height: toRem(38);
+      margin-bottom: toRem(24);
+   }
 }
 
 .field {
-   margin-bottom: toRem(32);
+   margin-bottom: toRem(12);
    width: 100%;
+
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(4);
+   }
+
 }
 
 .connectFields {
    display: flex;
    justify-content: space-between;
-   margin-bottom: toRem(32);
+   margin-bottom: toRem(12);
+   column-gap: toRem(24);
+
+   @media (max-width: $tablet) {
+      margin-bottom: toRem(4);
+   }
+}
+
+.buttonWrapper {
+   width: toRem(205);
 }

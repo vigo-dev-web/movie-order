@@ -1,69 +1,73 @@
 @import '../../variables';
 
-.select {
-   cursor: pointer;
-   border-radius: 0;
-   background-color: $formGrey;
-   border: none;
+.inputWrapper {
+   flex: 2 1 100%;
+}
+
+.input {
+   display: block;
    width: 100%;
    height: toRem(56);
    margin-bottom: toRem(4);
+   border: none;
+   background-color: $formGrey;
+   padding: toRem(16) toRem(20);
    font-size: toRem(16);
    line-height: toRem(24);
    font-weight: 400;
    color: rgba(255, 255, 255, 1);
-   padding: toRem(16) toRem(20);
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-
    &:focus {
-      outline: none;
-      box-shadow: none;
-   }
-
-   &:active {
-      box-shadow: none;
       outline: none;
    }
 }
 
-.selectError {
-   cursor: pointer;
-   border-radius: 0;
+.inputError {
+   display: block;
+   width: 100%;
+   height: toRem(56);
+   margin-bottom: toRem(4);
+   border: none;
    background-color: $formError;
-   border: none;
-   width: 100%;
-   height: toRem(56);
-   margin-bottom: toRem(4);
+   padding: toRem(16) toRem(20);
    font-size: toRem(16);
    line-height: toRem(24);
    font-weight: 400;
    color: rgba(255, 255, 255, 1);
-   padding: toRem(16) toRem(20);
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-
    &:focus {
-      box-shadow: none;
-      outline: none;
-   }
-
-   &:active {
-      box-shadow: none;
       outline: none;
    }
 }
 
-.option {
+.textArea {
+   width: 100%;
+   height: toRem(156);
+   border: none;
    background-color: $formGrey;
-   cursor: pointer;
    font-size: toRem(16);
+   padding: toRem(16) toRem(20);
    line-height: toRem(24);
    font-weight: 400;
-}
+   color: rgba(255, 255, 255, 1);
+   &:focus {
+      outline: none;
+   }
 
+}
+.textAreaError {
+   width: 100%;
+   height: toRem(156);
+   border: none;
+   background-color: $formError;
+   font-size: toRem(16);
+   padding: toRem(16) toRem(20);
+   line-height: toRem(24);
+   font-weight: 400;
+   color: rgba(255, 255, 255, 1);
+   &:focus {
+      outline: none;
+   }
+
+}
 
 .errorField {
    visibility: visible;
@@ -73,7 +77,6 @@
    line-height: toRem(16);
    color: $error;
 }
-
 .emptyField {
    visibility: hidden;
    opacity: 0;

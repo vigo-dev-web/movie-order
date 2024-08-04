@@ -9,11 +9,11 @@ const ContactInfo = () => {
 			</div>
 			<div className={styles.item}>
 				<span className={styles.title}>Главный офис</span>
-				<p>г. Москва, Садовническая ул., 80</p>
+				<p className={styles.info}>г. Москва, Садовническая ул., 80</p>
 			</div>
 			<div className={styles.item}>
 				<span className={styles.title}>Часы работы</span>
-				<p>Пн-Пт с 10:00 до 22:00</p>
+				<p className={styles.info}>Пн-Пт с 10:00 до 22:00</p>
 			</div>
 		</div>
 	)

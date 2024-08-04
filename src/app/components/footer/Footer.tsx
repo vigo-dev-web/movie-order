@@ -7,9 +7,6 @@ import { useModalContext } from '@/app/modalContext';
 const Footer = () => {
 	const { isOpen, setIsOpen } = useModalContext()
 
-	console.log(isOpen);
-
-
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.container}>

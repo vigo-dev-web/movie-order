@@ -1,13 +1,17 @@
 //----- vars -----//
 
 $mainBlack: #181818;
-$mainRed: #ec3f3f;
+$mainRed: rgb(236, 63, 63);
 $mainGrey: #343338;
+$formGrey: rgb(47, 47, 47);
+$formError: rgba(236, 63, 63, 0.2);
 $mainRedBorder: rgba(236, 63, 63, 0.8);
 $mainRedOpacity: rgba(236, 63, 63, 0.15);
-$mainRedHover: #ff1e1e;
+$mainRedHover: rgb(255, 30, 30);
 $mainTransition: all 0.4s ease-in 0s;
 $mainShadow: rgb(255, 30, 30, 0.5) 0px 2px 24px 0;
+$error: rgb(255, 88, 88, 1);
+
 
 //----- func & mixin -----//
 

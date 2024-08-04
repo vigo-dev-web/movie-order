@@ -3,14 +3,36 @@
 .container {
    font-size: toRem(40);
    line-height: toRem(48);
+   font-weight: 600;
+   padding-top: toRem(90);
+
+   @media (max-height: $tablet) {
+      font-size: toRem(32);
+      line-height: toRem(40);
+   }
 }
 
 .item {
-   margin-bottom: toRem(32);
+   margin-bottom: toRem(15);
+   vertical-align: bottom;
+}
+
+.info {
+   font-size: toRem(32);
+   line-height: toRem(40);
+   font-weight: 600;
+
+   @media (max-height: $tablet) {
+      font-size: toRem(24);
+      line-height: toRem(32);
+   }
+
 }
 
 .title {
    font-size: toRem(16);
    line-height: toRem(20);
+   font-weight: 400;
    margin-bottom: toRem(8);
+   color: rgba(255, 255, 255, 1);
 }

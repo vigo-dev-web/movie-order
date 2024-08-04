@@ -5,10 +5,10 @@ import styles from "./page.module.scss"
 
 const MovieOrder = () => {
 	return (
-		<div className={styles.container}>
+		<main className={styles.container}>
 			<RegisterForm />
 			<ContactInfo />
-		</div>
+		</main>
 	)
 }
 

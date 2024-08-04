@@ -2,6 +2,8 @@
 
 .container {
    @include container;
+   padding-top: toRem(40);
+   padding-bottom: toRem(88);
    display: flex;
    justify-content: space-between;
    width: 100%;

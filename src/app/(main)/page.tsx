@@ -8,6 +8,7 @@ import YandexMap from '../components/map/YandexMap'
 import Modal from '../components/ui/modal/Modal'
 
 const Home = () => {
+
 	return (
 		<main className={styles.main}>
 			<Poster />

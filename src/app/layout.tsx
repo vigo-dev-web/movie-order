@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.scss'
-import localFont from 'next/font/local'
 import { ModalWrapper } from './modalContext'
-
-const myFont = localFont({
-	src: '../../public/fonts/futura_pt_book.woff2',
-	display: 'swap',
-	weight: '400'
-})
+import { myFont } from '@/app/fonts'
 
 export const metadata: Metadata = {
 	title: 'Сериал | Ведьмак',

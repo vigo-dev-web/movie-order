@@ -1,7 +1,19 @@
+export type City = {
+	id: string
+	name: string
+}
+
+export type Social = {
+	id: string | number
+	link: string
+	img: string
+	alt: string
+}
+
 export type Actor = {
 	id: string | number
-   role: string
-   img: string
+	role: string
+	img: string
 	name: string
 	desc: string
 }
@@ -24,14 +36,27 @@ export type ErrorData = {
 	privacy?: string
 }
 
-export type City = {
-	id: string
+export type User = {
+	city: City | undefined
+	email: string
+	message: string
 	name: string
+	phone: string
+	privacy: boolean
 }
 
-export type Social = {
-	id: string | number
-	link: string
-	img: string
-	alt: string
+type Message = {
+	message: string
+}
+
+type IsRequired = {
+	isRequired: Message
+}
+export type ValidatorConfig = {
+	city: IsRequired
+	name: IsRequired
+	email: IsRequired
+	phone: IsRequired
+	message: IsRequired
+	privacy: IsRequired
 }

@@ -1,4 +1,6 @@
 import React, { ChangeEvent, ReactNode } from 'react'
+import styles from './CheckBoxField.module.scss'
+import { secondFont } from '@/app/fonts'
 
 interface ICheckBoxField {
 	name: string
@@ -13,13 +15,10 @@ const CheckBoxField = ({ name, value, onChange, children, error }: ICheckBoxFiel
 		onChange({ name: name, value: !value })
 	}
 
-	const getInputClasses = () => {
-		return 'form-check-input' + (error ? ' is-invalid' : '')
-	}
 	return (
-		<div>
+		<div className={styles.container}>
 			<input
-				className={getInputClasses()}
+				className={styles.checkbox}
 				type='checkbox'
 				value=''
 				id={name}
@@ -28,10 +27,15 @@ const CheckBoxField = ({ name, value, onChange, children, error }: ICheckBoxFiel
 			/>
 			<label
 				htmlFor={name}
+				className={value ? styles.labelChecked : styles.labelEmpty}
 			>
 				{children}
 			</label>
-			{error && <div>{error}</div>}
+			{error ? (
+				<p className={`${styles.errorField} ${secondFont.className}`}>{error}</p>
+			) : (
+				<p className={styles.emptyField}>{'Поле'}</p>
+			)}
 		</div>
 	)
 }

@@ -1,0 +1,55 @@
+@import '../../variables';
+
+.inputWrapper {
+   text-align: center;
+   background-color: $formGrey;
+   height: toRem(56);
+   padding: toRem(16) toRem(20);
+   position: relative;
+   cursor: pointer;
+   margin-bottom: toRem(4);
+}
+
+.inputErrorWrapper {
+   text-align: center;
+   background-color: $formError;
+   height: toRem(56);
+   padding: toRem(16) toRem(20);
+   position: relative;
+   cursor: pointer;
+   margin-bottom: toRem(4);
+}
+
+.container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.input {
+   display: block;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity: 0;
+   cursor: pointer;
+}
+
+.errorField {
+   visibility: visible;
+   opacity: 1;
+   font-size: toRem(12);
+   font-weight: 400;
+   line-height: toRem(16);
+   color: $error;
+}
+.emptyField {
+   visibility: hidden;
+   opacity: 0;
+   font-size: toRem(12);
+   font-weight: 400;
+   line-height: toRem(16);
+}

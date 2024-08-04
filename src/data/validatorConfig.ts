@@ -1,4 +1,6 @@
-export const validatorConfig = {
+import { ValidatorConfig } from './../types/Entyties';
+
+export const validatorConfig:ValidatorConfig = {
    city: {
       isRequired: {
          message: 'Город не выбран'

@@ -1,0 +1,34 @@
+@import '../../../variables';
+
+.container {
+   max-width: toRem(456);
+   padding-top: toRem(90);
+   @media (max-width: $tablet) {
+      max-width: toRem(320);
+   }
+}
+
+.title {
+   font-size: toRem(56);
+   line-height: 1;
+   margin-bottom: toRem(24);
+   text-wrap: wrap;
+   font-weight: 600;
+
+   @media (max-width: $tablet) {
+      font-size: toRem(40);
+   }
+}
+
+.text {
+   font-size: toRem(24);
+   line-height: toRem(32);
+   font-weight: 400;
+   margin-bottom: toRem(40);
+
+   @media (max-width: $tablet) {
+      font-size: toRem(16);
+      line-height: toRem(20);
+      margin-bottom: toRem(24);
+   }
+}

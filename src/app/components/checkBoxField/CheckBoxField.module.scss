@@ -1,0 +1,76 @@
+@import '../../variables';
+
+.container {
+   width: toRem(486);
+   margin-bottom: toRem(19);
+
+   @media (max-width: $tablet) {
+      max-width: toRem(320);
+   }
+}
+
+.labelChecked {
+   display: inline-flex;
+   align-items: center;
+   font-size: toRem(16);
+   width: 100%;
+   margin-bottom: toRem(5);
+
+   &:before {
+      cursor: pointer;
+      content: '✔';
+      flex: 0 0 toRem(32);
+      height: toRem(32);
+      font-weight: 300;
+      background-color: $formGrey;
+      text-align: center;
+      font-size: toRem(22);
+      color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-right: toRem(20);
+   }
+}
+
+.labelEmpty {
+   display: inline-flex;
+   align-items: center;
+   font-size: toRem(16);
+   width: 100%;
+   margin-bottom: toRem(5);
+
+   &:before {
+      cursor: pointer;
+      content: '';
+      flex: 0 0 toRem(32);
+      height: toRem(32);
+      font-weight: 300;
+      background-color: $formError;
+      text-align: center;
+      font-size: toRem(22);
+      color: rgba(255, 255, 255, 1);
+      border: 1px solid $mainRedBorder;
+      margin-right: toRem(20);
+
+   }
+}
+
+.checkbox {
+   display: none;
+}
+
+.errorField {
+   visibility: visible;
+   opacity: 1;
+   font-size: toRem(12);
+   font-weight: 400;
+   line-height: toRem(16);
+   color: $error;
+}
+
+.emptyField {
+   visibility: hidden;
+   opacity: 0;
+   font-size: toRem(12);
+   font-weight: 400;
+   line-height: toRem(16);
+}

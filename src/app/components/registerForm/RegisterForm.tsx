@@ -11,35 +11,37 @@ import FileField from '../fileField/FileField'
 import CheckBoxField from '../checkBoxField/CheckBoxField'
 import { validatorConfig } from '@/data/validatorConfig'
 import OrderSucess from '../ui/orderSucess/OrderSucess'
+import Button from '../ui/button/Button'
+// import { useDispatch } from 'react-redux'
+// import { userAdded } from '@/app/lib/features/users/usersSlice'
 
 const RegisterForm = () => {
+
 	const [data, setData] = useState<InputData>({
 		city: '',
 		name: '',
 		email: '',
 		phone: '',
 		message: '',
-		privacy: true
+		privacy: false
 	})
 
 	const [errors, setErrors] = useState<ErrorData>({} as ErrorData)
-
 	const [isSuccess, setIsSucess] = useState(false)
+	// const dispatch = useDispatch()
 
 	useEffect(() => {
 		validate()
 	}, [data])
 
-	const handleChange = (target: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+	const handleChange = (target: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
 		setData((prevState) => ({ ...prevState, [target.name]: target.value }))
 	}
-
 	const validate = () => {
 		const errors = validator(data, validatorConfig)
 		setErrors(errors as ErrorData)
 		return Object.keys(errors).length === 0
 	}
-	const isValid = Object.keys(errors).length === 0
 
 	const getCityById = (id: string) => {
 		for (const city of cities) {
@@ -54,11 +56,10 @@ const RegisterForm = () => {
 		const isValid = validate()
 		if (!isValid) return
 		setIsSucess(true)
-		// const { city } = data
-		// console.log({ ...data, city: getCityById(city) })
+		const { city } = data
+		let user = {...data, city: getCityById(city)}
+		// dispatch(userAdded(user))
 	}
-
-	console.log(isSuccess)
 
 	return (
 		<div className={styles.container}>
@@ -72,7 +73,7 @@ const RegisterForm = () => {
 							<SelectField
 								name='city'
 								options={cities}
-								defaultOption='Выберете город: '
+								defaultOption='Выберете город'
 								onChange={handleChange}
 								value={data.city}
 								error={errors.city}
@@ -128,12 +129,9 @@ const RegisterForm = () => {
 						>
 							Даю согласие на обработку своих персональных данных
 						</CheckBoxField>
-						<button
-							type='submit'
-							// disabled={!isValid}
-						>
-							Оставить заявку
-						</button>
+						<div className={styles.buttonWrapper}>
+							<Button>{'Оставить заявку'}</Button>
+						</div>
 					</form>
 				</>
 			)}
