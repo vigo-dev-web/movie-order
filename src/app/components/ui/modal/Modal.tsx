@@ -8,8 +8,16 @@ const Modal = () => {
 
 	return (
 		<div className={styles.layout}>
-			<div className={styles.body} onClick={(e) => e.stopPropagation()}>
-				<p className={styles.closeBtn} onClick={(prev) => setIsOpen(!prev)}>X</p>
+			<div
+				className={styles.body}
+				onClick={(e) => e.stopPropagation()}
+			>
+				<p
+					className={styles.closeBtn}
+					onClick={(prev) => setIsOpen(!prev)}
+				>
+					X
+				</p>
 				<div className={styles.content}>
 					<h2 className={styles.title}>Обработка данных</h2>
 					<div>
@@ -36,7 +44,7 @@ const Modal = () => {
 							Сайтов и Сервисов Ваша Персональная информация собирается и используется Яндексом, в том числе включая
 							общество с ограниченной ответственностью «Гросс маркет», юридическое лицо, созданное по законодательству
 							Российской Федерации и зарегистрированное по адресу: 123351, Россия, Москва, ул. Гроссова, д. 12 (ООО
-							«Гросс маркет»), или его аффилированным лицом, предоставляющим соответствующий Сервис в иных юрисдикциях.
+							'Гросс марке'), или его аффилированным лицом, предоставляющим соответствующий Сервис в иных юрисдикциях.
 							С информацией о том, какое лицо предоставляет тот или иной Сервис, Вы можете ознакомиться в условиях
 							использования соответствующего Сервиса.
 						</p>
@@ -52,19 +60,6 @@ const Modal = () => {
 				</div>
 			</div>
 		</div>
-		// <div
-		// 	// onClick={onClose}
-		// 	className={styles.overlay}
-		// >
-		// 	<div onClick={(e) => e.stopPropagation()} className={styles.body}>
-		// 		<p
-		// 			// onClick={onClose}
-		// 			className={styles.closeBtn}
-		// 		>
-		// 			X
-		// 		</p>
-		// 	</div>
-		// </div>
 	)
 }
 
