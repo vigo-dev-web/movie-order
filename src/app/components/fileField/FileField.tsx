@@ -6,11 +6,11 @@ import { ChangeEvent, useState } from 'react'
 import { secondFont } from '@/app/fonts'
 
 const FileField = () => {
-	const [selectedFile, setSelectedFile] = useState(null)
+	const [selectedFile, setSelectedFile] = useState<File | undefined | null>(null)
 	const [selectedName, setSelectedName] = useState('')
 
 	const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const file: File | undefined = e.target.files?.[0]
+		const file = e.target.files?.[0]
 		setSelectedFile(file)
 		setSelectedName(file!.name)
 	}
