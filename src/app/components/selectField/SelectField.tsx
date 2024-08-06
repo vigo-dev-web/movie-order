@@ -1,20 +1,19 @@
 import React, { ChangeEvent } from 'react'
 import { City } from '@/types/Entyties'
-import styles from "./SelectField.module.scss"
+import styles from './SelectField.module.scss'
 import { myFont, secondFont } from '@/app/fonts'
 
 interface ISelectField {
 	name: string
 	value: string
-	onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+	onChange: (e: any) => void
 	error: string
 	options: City[]
-   defaultOption: string
+	defaultOption: string
 }
 
 const SelectField = ({ name, value, onChange, error, options, defaultOption }: ISelectField) => {
-
-   const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
+	const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
 		onChange({ name: target.name, value: target.value })
 	}
 
@@ -45,7 +44,11 @@ const SelectField = ({ name, value, onChange, error, options, defaultOption }: I
 						</option>
 					))}
 			</select>
-			{error ? <p className={`${styles.errorField} ${secondFont.className}`}>{error}</p> : <p className={styles.emptyField}>{'Поле не заполнено'}</p>}
+			{error ? (
+				<p className={`${styles.errorField} ${secondFont.className}`}>{error}</p>
+			) : (
+				<p className={styles.emptyField}>{'Поле не заполнено'}</p>
+			)}
 		</div>
 	)
 }

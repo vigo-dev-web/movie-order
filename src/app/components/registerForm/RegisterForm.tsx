@@ -34,7 +34,7 @@ const RegisterForm = () => {
 		validate()
 	}, [data])
 
-	const handleChange = (target: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+	const handleChange = (target: any) => {
 		setData((prevState) => ({ ...prevState, [target.name]: target.value }))
 	}
 	const validate = () => {

@@ -6,13 +6,12 @@ interface ITextdField {
 	label: string
 	name: string
 	value: string
-	onChange: (e: ChangeEvent<HTMLInputElement>) => void
+	onChange: (e: any) => void
 	type: string
 	error?: string
 }
 
 const TextField = ({ label, name, value, onChange, type, error, ...rest }: ITextdField) => {
-
 	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		onChange({ name: e.target.name, value: e.target.value })
 	}

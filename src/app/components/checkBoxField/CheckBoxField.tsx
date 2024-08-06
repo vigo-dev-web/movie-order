@@ -5,7 +5,7 @@ import { secondFont } from '@/app/fonts'
 interface ICheckBoxField {
 	name: string
 	value: boolean | undefined
-	onChange: (target: ChangeEvent<HTMLInputElement>) => void
+	onChange: (e: any) => void
 	children: ReactNode
 	error?: string
 }
