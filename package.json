@@ -9,7 +9,7 @@
     "@types/react-dom": "18.0.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
