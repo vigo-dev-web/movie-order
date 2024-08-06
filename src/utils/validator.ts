@@ -1,7 +1,7 @@
 import { ErrorData, InputData, ValidatorConfig } from '@/types/Entyties'
 
-export function validator(data: InputData, config: ValidatorConfig): ErrorData {
-	const errors = {} as ErrorData
+export function validator(data: InputData | any, config: ValidatorConfig | any): ErrorData {
+	const errors = {} as ErrorData | any
 	function validate(validateMethod: string, data: InputData | string, config: ValidatorConfig) {
 		let statusValidate
 		switch (validateMethod) {
