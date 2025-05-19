@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from './button.module.scss'
+import styles from './Button.module.scss'
 
 interface IButton {
 	children: ReactNode | string

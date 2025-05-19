@@ -1,5 +1,5 @@
 import { useModalContext } from '@/app/modalContext'
-import styles from './modal.module.scss'
+import styles from './Modal.module.scss'
 
 const Modal = () => {
 	const { isOpen, setIsOpen } = useModalContext()
