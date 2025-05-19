@@ -39,6 +39,7 @@ const TextField = ({ label, name, value, onChange, type, error, ...rest }: IText
 						value={value}
 						onChange={handleChange}
 						className={error ? `${styles.inputError} ${myFont.className}` : `${styles.input} ${myFont.className}`}
+						autoComplete="false"
 						{...rest}
 					/>
 				)}

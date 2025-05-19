@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react'
+import React, { useState, useEffect, FormEvent } from 'react'
 import { validator } from '@/utils/validator'
 import { ErrorData, InputData } from '@/types/Entyties'
 import { cities } from '@/data/cities'
@@ -12,8 +12,6 @@ import CheckBoxField from '../checkBoxField/CheckBoxField'
 import { validatorConfig } from '@/data/validatorConfig'
 import OrderSucess from '../ui/orderSucess/OrderSucess'
 import Button from '../ui/button/Button'
-// import { useDispatch } from 'react-redux'
-// import { userAdded } from '@/app/lib/features/users/usersSlice'
 
 const RegisterForm = () => {
 
@@ -28,7 +26,6 @@ const RegisterForm = () => {
 
 	const [errors, setErrors] = useState<ErrorData>({} as ErrorData)
 	const [isSuccess, setIsSucess] = useState(false)
-	// const dispatch = useDispatch()
 
 	useEffect(() => {
 		validate()
@@ -58,7 +55,6 @@ const RegisterForm = () => {
 		setIsSucess(true)
 		const { city } = data
 		let user = {...data, city: getCityById(city)}
-		// dispatch(userAdded(user))
 	}
 
 	return (
